@@ -9,4 +9,18 @@
     <%= user.email %>
   </p>
 
+  <p>
+    <strong>Microposts:</strong>
+    <%= user.microposts.count %>
+  </p>
+
+  <div id="users">
+    <% user.microposts.each do |micropost| %>
+      <%= render micropost %>
+      <p>
+        <%= link_to "Show this micropost", micropost %>
+      </p>
+    <% end %>
+  </div>
+
 </div>
